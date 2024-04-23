@@ -231,7 +231,7 @@ final class ViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    // 앱의 화면을 터치하면 동작하는 함수
+    // 앱의 화면을 터치하면 키보드 내려가게 하기
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -256,7 +256,7 @@ extension ViewController: UITextFieldDelegate {
             passwordInfoLabelCenterYConstraint.constant = -13
         }
         
-        // 실제 레이아웃 변경은 애니메이션으로 줄꺼야
+        // 텍스트필드 오토레이아웃이 바꼈을 때 에니메니션 효과 주기
         UIView.animate(withDuration: 0.3) {
             self.stackView.layoutIfNeeded()
         }
@@ -316,3 +316,4 @@ extension ViewController: UITextFieldDelegate {
     }
 }
 
+mark
