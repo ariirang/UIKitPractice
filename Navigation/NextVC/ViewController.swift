@@ -44,6 +44,21 @@ class ViewController: UIViewController {
             // 데이터 전달
             thirdVC.someString = "Third View Controller"
         }
+        
+        if segue.identifier == "toFourthVC" {
+            let fourthVC = segue.destination as! FourthViewController
+            
+            // 데이터 전달
+            fourthVC.someString = "Fourth View Controller"
+        }
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if true {
+            return false
+        } else {
+            return true
+        }
     }
     
 }
